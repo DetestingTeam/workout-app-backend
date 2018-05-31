@@ -21,8 +21,9 @@ gem 'puma', '~> 3.11'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise-jwt'
-gem 'devise'
+gem 'devise-jwt', '~> 0.5.6'
+# gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

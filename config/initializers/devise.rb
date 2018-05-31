@@ -8,17 +8,12 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = 'a77b463c5cd76a544a70dbbc274e1a2f791316295ad112855690271968e3589eca6dc2cf417bc21cc6231fc33ee004b9933e4f80fb40dfddbff97e081b105861'
+  config.secret_key = 'ef7a0d2533c3977e38e706f11901c76779505f115ca7bbb55a0db1d87652c34ab92a529085f5ecb89a16c367f089db6d72cd79079be70ff8e07119814b9eba6e'
 
   config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
-    jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
-    ]
-    jwt.expiration_time = 1.day.to_i
+  jwt.secret = 'ef7a0d2533c3977e38e706f11901c76779505f115ca7bbb55a0db1d87652c34ab92a529085f5ecb89a16c367f089db6d72cd79079be70ff8e07119814b9eba6e'
+
+    # jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
   end
   config.navigational_formats = []
   # ==> Controller configuration
