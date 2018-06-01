@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_182001) do
+ActiveRecord::Schema.define(version: 2018_05_30_202959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,18 +24,26 @@ ActiveRecord::Schema.define(version: 2018_05_30_182001) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "movements_workouts", id: false, force: :cascade do |t|
-    t.bigint "movement_id", null: false
-    t.bigint "workout_id", null: false
-  end
-
   create_table "schedules", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.string "time"
     t.bigint "workouts_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workouts_id"], name: "index_schedules_on_workouts_id"
+  end
+
+  create_table "user_histories", force: :cascade do |t|
+    t.integer "set"
+    t.integer "rep"
+    t.float "weight"
+    t.string "workout_name"
+    t.bigint "movement_id"
+    t.bigint "workout_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movement_id"], name: "index_user_histories_on_movement_id"
+    t.index ["workout_id"], name: "index_user_histories_on_workout_id"
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -46,4 +54,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_182001) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_histories", "movements"
+  add_foreign_key "user_histories", "workouts"
 end
