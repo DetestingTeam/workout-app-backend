@@ -1,8 +1,8 @@
 class CreateMovements < ActiveRecord::Migration[5.2]
   def change
     create_table :movements do |t|
-      t.string :name
-      t.text :description
+      t.string :movement_name
+      t.text :movement_description
       t.string :url
       t.string :bodypart
 

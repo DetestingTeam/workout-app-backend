@@ -11,23 +11,23 @@ user3 = User.create(first_name: 'Steve', last_name: 'Wild', email: 'email3@test.
 user4 = User.create(first_name: 'Mike', last_name: 'Jones', email: 'email4@test.com', password: 'Test1234', password_confirmation: 'Test1234')
 user5 = User.create(first_name: 'Linda', last_name: 'Smith', email: 'email5@test.com', password: 'Test1234', password_confirmation: 'Test1234')
 
-movement1 = Movement.create([{ name: 'Pull Up', description: "Keep a tight core throughout the entire push up.  keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
-movement2 = Movement.create([{ name: 'Sit Up', description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a  bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
-movement3 = Movement.create([{ name: 'Burpee', description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 90-degree angle. Exhale m slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
-movement4 = Movement.create([{ name: 'Sled pull', description: "Keep a tight core throughout the ews; keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
-movement5 = Movement.create([{ name: 'Snatch', description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 9slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
+movement1 = Movement.create([{ movement_name: 'Pull Up', movement_description: "Keep a tight core throughout the entire push up.  keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
+movement2 = Movement.create([{ movement_name: 'Sit Up', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a  bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
+movement3 = Movement.create([{ movement_name: 'Burpee', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 90-degree angle. Exhale m slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
+movement4 = Movement.create([{ movement_name: 'Sled pull', movement_description: "Keep a tight core throughout the ews; keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
+movement5 = Movement.create([{ movement_name: 'Snatch', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 9slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
 #
 #movement = Movement.create(name: 'Push Up', description: 'Keep a tight core', bodypart: 'Chest')
 
 
 #   Character.create(name: 'Luke', movie: movies.first)
 
-workout1 = Workout.create( name: 'Booty Blaster', difficulty: 'moderate', duration: '1 hour', date: '7/5/2018', time: '8am')
-workout2 = Workout.create([{ name: 'Thunder Tights', difficulty: 'moderate', duration: '1 hour', date: '7/6/2018', time: '8am'}])
-workout3 = Workout.create([{ name: 'Bluber Buster', difficulty: 'moderate', duration: '1 hour', date: '7/7/2018', time: '8am'}])
-workout4 = Workout.create([{ name: 'Abs of Steel', difficulty: 'moderate', duration: '1 hour', date: '7/8/2018', time: '8am'}])
-workout5 = Workout.create([{ name: 'Leg Burner', difficulty: 'moderate', duration: '1 hour', date: '7/9/2018', time: '8am'}])
-workout6 = Workout.create([{ name: 'Gun Maker', difficulty: 'moderate', duration: '1 hour', date: '7/10/2018', time: '8am'}])
+workout1 = Workout.create( workout_name: 'Booty Blaster', difficulty: 'moderate', duration: '1 hour', workout_date: '7/5/2018', time: '8am')
+workout2 = Workout.create([{ workout_name: 'Thunder Tights', difficulty: 'moderate', duration: '1 hour', workout_date: '7/6/2018', time: '8am'}])
+workout3 = Workout.create([{ workout_name: 'Bluber Buster', difficulty: 'moderate', duration: '1 hour', workout_date: '7/7/2018', time: '8am'}])
+workout4 = Workout.create([{ workout_name: 'Abs of Steel', difficulty: 'moderate', duration: '1 hour', workout_date: '7/8/2018', time: '8am'}])
+workout5 = Workout.create([{ workout_name: 'Leg Burner', difficulty: 'moderate', duration: '1 hour', workout_date: '7/9/2018', time: '8am'}])
+workout6 = Workout.create([{ workout_name: 'Gun Maker', difficulty: 'moderate', duration: '1 hour', workout_date: '7/10/2018', time: '8am'}])
 #
 #
 # schedule1 = Schedule.create([{ date: '1/1/1999', time: '8 am', workouts_id: 1 }])
@@ -37,6 +37,7 @@ workout6 = Workout.create([{ name: 'Gun Maker', difficulty: 'moderate', duration
 # schedule5 = Schedule.create([{ date: '6/1/2018', time: '8 am', workouts_id: 5 }])
 # schedule6 = Schedule.create([{ date: '6/2/2018', time: '8 am', workouts_id: 6 }])
 #
+
 history = UserHistory.create([{ user_id: 1, set: 1, weight: 20, rep: 5, movement_id: 1, workout_id: 1}])
 history2 = UserHistory.create([{ user_id: 1, set: 2, weight: 10, rep: 12, movement_id: 1, workout_id: 1}])
 history3 = UserHistory.create([{ user_id: 3, set: 1, weight: 45, rep: 8,  movement_id: 2, workout_id: 1}])
@@ -48,11 +49,11 @@ history8 = UserHistory.create([{ user_id: 3, set: 2, weight: 20, rep: 10, moveme
 
 
 
-w1 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 1, movement_id: 1)
-w11 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 1, movement_id: 2)
-w12 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 1, movement_id: 3)
-w13 = Workoutdetail.create(set: 4, rep: 5, duration: '10min',  workout_id: 1, movement_id: 4)
-w14 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 1, movement_id: 5)
-w14 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 2, movement_id: 3)
-w5 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 2, movement_id: 1)
-w6 = Workoutdetail.create(set: 7, rep: 8, duration: '10min',  workout_id: 2, movement_id: 2)
+w1 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 1)
+w11 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 2)
+w12 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 3)
+w13 = Workoutdetail.create(rec_set: 4, rec_rep: 5, duration: '10min',  workout_id: 1, movement_id: 4)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 5)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 3)
+w5 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 1)
+w6 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 2)

@@ -16,12 +16,21 @@ ActiveRecord::Schema.define(version: 2018_06_04_173721) do
   enable_extension "plpgsql"
 
   create_table "movements", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.string "movement_name"
+    t.text "movement_description"
     t.string "url"
     t.string "bodypart"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "date"
+    t.string "time"
+    t.bigint "workouts_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workouts_id"], name: "index_schedules_on_workouts_id"
   end
 
   create_table "user_histories", force: :cascade do |t|
@@ -60,9 +69,9 @@ ActiveRecord::Schema.define(version: 2018_06_04_173721) do
   end
 
   create_table "workoutdetails", force: :cascade do |t|
-    t.integer "set"
-    t.integer "rep"
-    t.string "duration"
+    t.integer "rec_set"
+    t.integer "rec_rep"
+    t.string "rec_duration"
     t.bigint "movement_id"
     t.bigint "workout_id"
     t.datetime "created_at", null: false
@@ -72,10 +81,10 @@ ActiveRecord::Schema.define(version: 2018_06_04_173721) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "name"
+    t.string "workout_name"
     t.string "difficulty"
     t.string "duration"
-    t.date "date"
+    t.date "workout_date"
     t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
