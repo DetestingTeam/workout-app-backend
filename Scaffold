@@ -1,0 +1,2 @@
+rails g scaffold workoutdetail setdetail:integer repdetail:integer durationdetail:string difficultydetail:string
+workouts:references movements:references

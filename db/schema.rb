@@ -10,12 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_05_31_202021) do
+ActiveRecord::Schema.define(version: 2018_06_04_173721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "movements", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "bodypart"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_histories", force: :cascade do |t|
+    t.integer "set"
+    t.integer "rep"
+    t.float "weight"
+    t.bigint "movement_id"
+    t.bigint "workout_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movement_id"], name: "index_user_histories_on_movement_id"
+    t.index ["user_id"], name: "index_user_histories_on_user_id"
+    t.index ["workout_id"], name: "index_user_histories_on_workout_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", default: "", null: false
@@ -38,46 +59,31 @@ ActiveRecord::Schema.define(version: 2018_05_31_202021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "movements", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "url"
-    t.string "bodypart"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.string "date"
-    t.string "time"
-    t.bigint "workouts_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["workouts_id"], name: "index_schedules_on_workouts_id"
-  end
-
-  create_table "user_histories", force: :cascade do |t|
+  create_table "workoutdetails", force: :cascade do |t|
     t.integer "set"
     t.integer "rep"
-    t.float "weight"
-    t.string "workout_name"
+    t.string "duration"
     t.bigint "movement_id"
     t.bigint "workout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["movement_id"], name: "index_user_histories_on_movement_id"
-    t.index ["workout_id"], name: "index_user_histories_on_workout_id"
+    t.index ["movement_id"], name: "index_workoutdetails_on_movement_id"
+    t.index ["workout_id"], name: "index_workoutdetails_on_workout_id"
   end
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
     t.string "difficulty"
     t.string "duration"
+    t.date "date"
+    t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "user_histories", "movements"
+  add_foreign_key "user_histories", "users"
   add_foreign_key "user_histories", "workouts"
-
+  add_foreign_key "workoutdetails", "movements"
+  add_foreign_key "workoutdetails", "workouts"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :workoutdetails
   devise_for :users, defaults: {format: :json}
               # path: '',
               #  path_names: {

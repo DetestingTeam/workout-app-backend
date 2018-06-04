@@ -1,12 +1,11 @@
-class CreateUserHistories < ActiveRecord::Migration[5.2]
+class CreateWorkoutdetails < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_histories do |t|
+    create_table :workoutdetails do |t|
       t.integer :set
       t.integer :rep
-      t.float :weight
+      t.string :duration
       t.references :movement, index: true, foreign_key: true
       t.references :workout, index: true, foreign_key: true
-      t.references :user, index: true, foreign_key: true
       t.timestamps
     end
   end
