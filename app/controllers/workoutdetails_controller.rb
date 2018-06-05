@@ -4,7 +4,10 @@ class WorkoutdetailsController < ApplicationController
   # GET /workoutdetails
   # GET /workoutdetails.json
   def index
-    @workoutdetails = Workoutdetail.all
+
+  @details = Workoutdetail.includes(:movement, :workout).where(workout_id: 1).pluck_to_hash(:movement_name,:workout_name, :rec_rep, :rec_set, :difficulty, :workout_date, :rec_duration)
+  # .pluck(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date)
+  render json: @details
   end
 
   # GET /workoutdetails/1
