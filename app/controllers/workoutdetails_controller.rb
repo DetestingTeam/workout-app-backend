@@ -16,16 +16,38 @@ class WorkoutdetailsController < ApplicationController
   end
 
   # POST /workoutdetails
-  # POST /workoutdetails.json
-  def create
-    @workoutdetail = Workoutdetail.new(workoutdetail_params)
+  POST /workoutdetails.json
 
-    if @workoutdetail.save
-      render :show, status: :created, location: @workoutdetail
-    else
-      render json: @workoutdetail.errors, status: :unprocessable_entity
-    end
+
+
+ # Handle strong parameters, so we are secure
+  def create
+    #@workoutdetail = Workoutdetail.new(workoutdetail_params)
+
+  workoutdetails = workoutdetail.create(workoutdetails_params)
+  if workoutdetails.valid?
+    render json: workoutdetails
+   else
+     render json: workoutdetails.errors, status: :unprocessable_entity
+   end
+ end
+
+
+  def userhistory_params
+      params.require(:userh).permit(:userid, :movementid, :workoutid, :weight, :set, :rep)
   end
+  # def insertHistory
+  #   @userhistory = UserHistory.new
+  #   @userhistory.userid = params[:userid]
+  #   @userhistory.movementid = params[:movementid]
+  #   @userhistory.workoutid = params[:workoutid]
+  #   @userhistory.weight = params[:weight]
+  #   @userhistory.set = params[:set]
+  #   @userhistory.rep = params[:rep]
+  #   @user.save
+  #   render :confirmation
+  #
+  #   end
 
   # PATCH/PUT /workoutdetails/1
   # PATCH/PUT /workoutdetails/1.json
