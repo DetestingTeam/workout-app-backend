@@ -5,11 +5,11 @@
 #
 # movement = Movement.create([{ name: 'Push Up', description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 90-degree angle. Exhale as you begin contracting your chest muscles and pushing back up through your hands to the start position. Don't lock out the elbows; keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
 
-user1 = User.create(first_name: 'John', last_name: 'Murphy', email: 'email1@test.com', password: 'Test1234', password_confirmation: 'Test1234')
-user2 = User.create(first_name: 'Jess', last_name: 'Murphy', email: 'email2@test.com', password: 'Test1234', password_confirmation: 'Test1234')
-user3 = User.create(first_name: 'Steve', last_name: 'Wild', email: 'email3@test.com', password: 'Test1234', password_confirmation: 'Test1234')
-user4 = User.create(first_name: 'Mike', last_name: 'Jones', email: 'email4@test.com', password: 'Test1234', password_confirmation: 'Test1234')
-user5 = User.create(first_name: 'Linda', last_name: 'Smith', email: 'email5@test.com', password: 'Test1234', password_confirmation: 'Test1234')
+user1 = User.create(first_name: 'John', last_name: 'Murphy', email: 'email1@test.com', password_digest: 'Test1234')
+user2 = User.create(first_name: 'Jess', last_name: 'Murphy', email: 'email2@test.com', password_digest: 'Test1234')
+user3 = User.create(first_name: 'Steve', last_name: 'Wild', email: 'email3@test.com', password_digest: 'Test1234')
+user4 = User.create(first_name: 'Mike', last_name: 'Jones', email: 'email4@test.com', password_digest: 'Test1234')
+user5 = User.create(first_name: 'Linda', last_name: 'Smith', email: 'email5@test.com', password_digest: 'Test1234')
 
 movement1 = Movement.create([{ movement_name: 'Pull Up', movement_description: "Keep a tight core throughout the entire push up.  keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
 movement2 = Movement.create([{ movement_name: 'Sit Up', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a  bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' }])
@@ -49,11 +49,11 @@ history8 = UserHistory.create([{ user_id: 3, set: 2, weight: 20, rep: 10, moveme
 
 
 
-w1 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 1)
-w11 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 2)
-w12 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 3)
-w13 = Workoutdetail.create(rec_set: 4, rec_rep: 5, duration: '10min',  workout_id: 1, movement_id: 4)
-w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 1, movement_id: 5)
-w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 3)
-w5 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 1)
-w6 = Workoutdetail.create(rec_set: 7, rec_rep: 8, duration: '10min',  workout_id: 2, movement_id: 2)
+w1 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 1, movement_id: 1)
+w11 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 1, movement_id: 2)
+w12 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 1, movement_id: 3)
+w13 = Workoutdetail.create(rec_set: 4, rec_rep: 5, rec_duration: '10min',  workout_id: 1, movement_id: 4)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 1, movement_id: 5)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 3)
+w5 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 1)
+w6 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 2)

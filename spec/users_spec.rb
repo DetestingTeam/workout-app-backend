@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'devise/jwt/test_helpers'
+# require 'rails_helper'
+# require 'devise/jwt/test_helpers'
 
 RSpec.describe "Users", type: :request do
   describe "POST /users" do

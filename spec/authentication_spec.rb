@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'devise/jwt/test_helpers'
+# require 'rails_helper'
+# require 'devise/jwt/test_helpers'
 
 RSpec.describe 'POST /sign_in', type: :request do
   let!(:user){ User.create(first_name:"Deiter", last_name:"TheHof", email:"dhof01@gmail.com", password:"Test123") }

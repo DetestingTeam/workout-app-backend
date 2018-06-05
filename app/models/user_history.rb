@@ -1,5 +1,5 @@
 class UserHistory < ApplicationRecord
-  belongs_to :movement
-  belongs_to :workout
-  belongs_to :users
+  # belongs_to :movement
+  # belongs_to :workout
+  # belongs_to :users
 end

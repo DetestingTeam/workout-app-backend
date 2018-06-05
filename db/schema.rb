@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 2018_06_04_173721) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +22,6 @@ ActiveRecord::Schema.define(version: 2018_06_04_173721) do
     t.string "bodypart"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.string "date"
-    t.string "time"
-    t.bigint "workouts_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["workouts_id"], name: "index_schedules_on_workouts_id"
   end
 
   create_table "user_histories", force: :cascade do |t|
