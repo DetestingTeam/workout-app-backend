@@ -1,4 +1,4 @@
 class Workoutdetail < ApplicationRecord
-  # has_many :movements
-  # has_many :workouts
+  belongs_to :movement
+  belongs_to :workout
 end
