@@ -1,17 +1,12 @@
 class UserHistoriesController < ApplicationController
 
-  # def index
-  #   # @user_history = UserHistory.all
-  #   @user_history = UserHistory.joins(:movement).all
-  #   render json: @user_history
-  # end
+
   #
   # def show
   #     @user_history = UserHistory.all
 def index
 
-@history = UserHistory.includes(:movement, :workout).where(user_id: params[:id]).pluck_to_hash(:user_id, :workout_name, :difficulty, :workout_date, :duration, :set, :movement_id, :movement_name, :rep, :weight)
-# .pluck(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date)
+@history = UserHistory.includes(:movement, :workout, :user).where(user_id: params[:id]).pluck_to_hash(:user_id, :first_name, :last_name, :workout_name, :difficulty, :workout_date, :duration, :set, :movement_id, :movement_name, :rep, :weight, :created_at)
 render json: @history
 end
 
@@ -30,17 +25,6 @@ end
  def userhistory_params
      params.require(:userhistory).permit(:user_id, :workout_id, :movement_name, :weight, :set, :movement_id, :movement, :rep)
  end
- # def insertHistory
- #   @userhistory = UserHistory.new
- #   @userhistory.userid = params[:userid]
- #   @userhistory.movementid = params[:movementid]
- #   @userhistory.workoutid = params[:workoutid]
- #   @userhistory.weight = params[:weight]
- #   @userhistory.set = params[:set]
- #   @userhistory.rep = params[:rep]
- #   @user.save
- #   render :confirmation
- #
- #   end
+
 
 end
