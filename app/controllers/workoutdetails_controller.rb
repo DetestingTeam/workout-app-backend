@@ -4,8 +4,9 @@ class WorkoutdetailsController < ApplicationController
   # GET /workoutdetails
   # GET /workoutdetails.json
   def index
+    # @history = UserHistory.includes(:movement, :workout).where(user_id: params[:id]).pluck_to_hash(:user_id, :workout_name, :difficulty, :workout_date, :duration, :set, :movement_id, :movement_name, :rep, :weight)
 
-  @details = Workoutdetail.includes(:movement, :workout).where(workout_id: 1).pluck_to_hash(:movement_name,:workout_name, :rec_rep, :rec_set, :difficulty, :workout_date, :rec_duration)
+  @details = Workoutdetail.includes(:movement, :workout).where(workout_id: params[:workout_id]).pluck_to_hash(:workout_name, :workout_date, :difficulty, :movement_id, :movement_name, :rec_rep, :rec_set, :rec_duration)
   # .pluck(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date)
   render json: @details
   end
@@ -16,7 +17,7 @@ class WorkoutdetailsController < ApplicationController
   end
 
   # POST /workoutdetails
-  POST /workoutdetails.json
+
 
 
 

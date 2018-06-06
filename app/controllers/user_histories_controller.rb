@@ -10,7 +10,7 @@ class UserHistoriesController < ApplicationController
   #     @user_history = UserHistory.all
 def index
 
-@history = UserHistory.includes(:movement, :workout).where(user_id: params[:id]).pluck_to_hash(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date, :duration, :weight, :set)
+@history = UserHistory.includes(:movement, :workout).where(user_id: params[:id]).pluck_to_hash(:user_id, :workout_name, :difficulty, :workout_date, :duration, :set, :movement_id, :movement_name, :rep, :weight)
 # .pluck(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date)
 render json: @history
 end
@@ -28,7 +28,7 @@ end
 end
 
  def userhistory_params
-     params.require(:userhistory).permit(:user_id, :movement_id, :workout_id, :weight, :set, :rep)
+     params.require(:userhistory).permit(:user_id, :workout_id, :movement_name, :weight, :set, :movement_id, :movement, :rep)
  end
  # def insertHistory
  #   @userhistory = UserHistory.new
