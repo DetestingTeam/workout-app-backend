@@ -17,6 +17,8 @@ gem 'pluck_to_hash'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
+#Make dates easy 'by_star'
+gem 'by_star'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

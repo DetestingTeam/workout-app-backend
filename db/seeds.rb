@@ -22,12 +22,12 @@ movement5 = Movement.create( movement_name: 'Snatch', movement_description: "Kee
 
 #   Character.create(name: 'Luke', movie: movies.first)
 
-workout1 = Workout.create( workout_name: 'Booty Blaster', difficulty: 'moderate', duration: '1 hour', workout_date: '7/7/2018', time: '8am', location: 'Kate Session Park San Diego', instructor: 'Mike G')
-workout2 = Workout.create( workout_name: 'Thunder Tights', difficulty: 'moderate', duration: '1 hour', workout_date: '7/7/2018', time: '9am', location: 'Torrey Pines La Jolla', instructor: 'Mike G')
-workout3 = Workout.create( workout_name: 'Bluber Buster', difficulty: 'moderate', duration: '1 hour', workout_date: '7/7/2018', time: '10am', location: 'Balboa Park San Diego', instructor: 'Mike G')
-workout4 = Workout.create( workout_name: 'Abs of Steel', difficulty: 'moderate', duration: '1 hour', workout_date: '7/8/2018', time: '8am', location: 'Petco Park San Diego', instructor: 'Mike G')
-workout5 = Workout.create( workout_name: 'Leg Burner', difficulty: 'moderate', duration: '1 hour', workout_date: '7/8/2018', time: '8am', location: 'Balboa Park San Diego', instructor: 'Mike G')
-workout6 = Workout.create( workout_name: 'Gun Maker', difficulty: 'moderate', duration: '1 hour', workout_date: '7/8/2018', time: '8am', location: 'Kate Session Park San Diego', instructor: 'Mike G')
+workout1 = Workout.create( workout_name: 'Booty Blaster', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-07-2018', time: '8am', location: 'Kate Session1 Park San Diego', instructor: 'Mike G')
+workout2 = Workout.create( workout_name: 'Thunder Tights', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-07-2018', time: '9am', location: 'Torrey Pines La Jolla', instructor: 'Mike G')
+workout3 = Workout.create( workout_name: 'Bluber Buster', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-07-2018', time: '10am', location: 'Balboa Park San Diego', instructor: 'Mike G')
+workout4 = Workout.create( workout_name: 'Abs of Steel', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-08-2018', time: '8am', location: 'Petco Park San Diego', instructor: 'Mike G')
+workout5 = Workout.create( workout_name: 'Leg Burner', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-08-2018', time: '8am', location: 'Balboa Park San Diego', instructor: 'Mike G')
+workout6 = Workout.create( workout_name: 'Gun Maker', difficulty: 'moderate', duration: '1 hour', workout_date: 'Jun-08-2018', time: '8am', location: 'Kate Session Park San Diego', instructor: 'Mike G')
 #
 #
 # schedule1 = Schedule.create( date: '1/1/1999', time: '8 am', workouts_id: 1 )

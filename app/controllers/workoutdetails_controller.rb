@@ -1,24 +1,14 @@
 class WorkoutdetailsController < ApplicationController
   before_action :set_workoutdetail, only: [:show, :update, :destroy]
 
-  # GET /workoutdetails
-  # GET /workoutdetails.json
+#Grab everything at once, dump it into a json paylod let the front end figure it out
   def index
-    # @history = UserHistory.includes(:movement, :workout).where(user_id: params[:id]).pluck_to_hash(:user_id, :workout_name, :difficulty, :workout_date, :duration, :set, :movement_id, :movement_name, :rep, :weight)
-
-  @details = Workoutdetail.includes(:movement, :workout).where(workout_id: params[:workout_id]).pluck_to_hash(:workout_name, :workout_date, :difficulty, :movement_id, :movement_name, :rec_rep, :rec_set, :rec_duration)
-  # .pluck(:movement_name,:workout_name, :rep, :user_id, :movement_id, :id, :difficulty, :workout_date)
+    @details = Workoutdetail.includes(:movement, :workout).where(workout_id: params[:workout_id]).pluck_to_hash(:workout_name, :workout_date, :difficulty, :movement_id, :movement_name, :rec_rep, :rec_set, :rec_duration, :instructor, :location, :time)
   render json: @details
   end
 
-  # GET /workoutdetails/1
-  # GET /workoutdetails/1.json
   def show
   end
-
-  # POST /workoutdetails
-
-
 
 
  # Handle strong parameters, so we are secure
