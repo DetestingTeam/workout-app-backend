@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2018_06_04_173721) do
     t.string "difficulty"
     t.string "duration"
     t.date "workout_date"
+    t.string "location"
+    t.string "instructor"
     t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
