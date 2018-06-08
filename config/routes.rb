@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'groupworkout/future' => 'groupworkout#future'
-  resources :users
+  resources :users, defaults: {format: :json}
   post 'user_token' => 'user_token#create'
   resources :workoutdetails, defaults: {format: :json}
   resources :user_histories, defaults: {format: :json}
