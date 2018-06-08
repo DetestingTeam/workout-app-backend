@@ -3,7 +3,7 @@ class WorkoutdetailsController < ApplicationController
 
 #Grab everything at once, dump it into a json paylod let the front end figure it out
   def index
-    @details = Workoutdetail.includes(:movement, :workout).where(workout_id: params[:workout_id]).pluck_to_hash(:workout_name, :workout_date, :difficulty, :movement_id, :movement_name, :rec_rep, :rec_set, :rec_duration, :instructor, :location, :time)
+    @details = Workoutdetail.includes(:movement, :workout).where(workout_id: params[:workout_id]).pluck_to_hash(:workout_name, :workout_date, :difficulty, :movement_id, :movement_name, :rec_rep, :rec_set, :rec_duration, :location, :time)
   render json: @details
   end
 
