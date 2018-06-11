@@ -1,5 +1,5 @@
 class UserTokenController < ApplicationController
-  before_action :authenticate
+  # before_action :authenticate
 
   def create
     render json: auth_token, status: :created
