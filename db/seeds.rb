@@ -16,6 +16,11 @@ movement2 = Movement.create( movement_name: 'Sit Up', movement_description: "Kee
 movement3 = Movement.create( movement_name: 'Burpee', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 90-degree angle. Exhale m slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
 movement4 = Movement.create( movement_name: 'Sled pull', movement_description: "Keep a tight core throughout the ews; keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
 movement5 = Movement.create( movement_name: 'Snatch', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 9slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+movement6 = Movement.create( movement_name: '5 Min mile', movement_description: "Keep a tight core throughout the entire push up.  keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+movement7 = Movement.create( movement_name: 'Sled Suicide', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a  bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+movement8 = Movement.create( movement_name: 'Viper Jacks', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 90-degree angle. Exhale m slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+movement9 = Movement.create( movement_name: 'Medicine Ball Slams', movement_description: "Keep a tight core throughout the ews; keep them slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+movement10 = Movement.create( movement_name: 'Trx Row', movement_description: "Keep a tight core throughout the entire push up. Inhale as you slowly bend your elbows and lower yourself until your elbows are at a 9slightly bent", bodypart: 'Chest', url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
 #
 #movement = Movement.create(name: 'Push Up', description: 'Keep a tight core', bodypart: 'Chest')
 
@@ -69,3 +74,11 @@ w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  worko
 w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 3)
 w5 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 1)
 w6 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 2, movement_id: 2)
+w1 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 3, movement_id: 5)
+w11 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 3, movement_id: 7)
+w12 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 3, movement_id: 5)
+w13 = Workoutdetail.create(rec_set: 4, rec_rep: 5, rec_duration: '10min',  workout_id: 3, movement_id: 7)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 3, movement_id: 3)
+w14 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 4, movement_id: 3)
+w5 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 4, movement_id: 1)
+w6 = Workoutdetail.create(rec_set: 7, rec_rep: 8, rec_duration: '10min',  workout_id: 4, movement_id: 2)
