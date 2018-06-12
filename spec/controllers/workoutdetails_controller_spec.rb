@@ -25,18 +25,38 @@ require 'rails_helper'
 
 RSpec.describe WorkoutdetailsController, type: :controller do
 
+  let(:valid_attributes) {
+    {
+      rec_set: 3,
+      rec_rep: 10,
+      rec_duration: '10min',
+      workout_id: 1,
+      movement_id: 1
+      }
+    }
+  let(:workout_attributes){
+    {
+      workout_name: 'Abs and Arms',
+      difficulty: 'easy',
+      duration: '1 hour',
+      workout_date: 'Jun-11-2018',
+      location: 'LEARN Academy',
+      instructor: 'Christine B',
+      time: '6am'
+    }
+  }
+  let(:movement_attributes){
+    {
+      movement_name: 'Pull Up',
+      movement_description: "Keep a tight core throughout the entire push up.  keep them slightly bent",
+      bodypart: 'Chest',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Man_Doing_Push_Ups_GIF_Animation_Loop.gif' )
+    }
+  }
+
   # This should return the minimal set of attributes required to create a valid
   # Workoutdetail. As you add validations to Workoutdetail, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    workoutdetail_params =
-      workoutdetail: {
-        setdetail: '2',
-        repdetail: '10',
-        durationdetail: '1 hour',
-        difficultydetail: 'easy'
-      }
-  }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
