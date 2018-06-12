@@ -29,7 +29,13 @@ RSpec.describe WorkoutdetailsController, type: :controller do
   # Workoutdetail. As you add validations to Workoutdetail, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    workoutdetail_params =
+      workoutdetail: {
+        setdetail: '2',
+        repdetail: '10',
+        durationdetail: '1 hour',
+        difficultydetail: 'easy'
+      }
   }
 
   let(:invalid_attributes) {
