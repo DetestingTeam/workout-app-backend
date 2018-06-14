@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'rspec'
-require './app/controllers/movements_controller.rb'
+
 
 RSpec.describe MovementsController, type: :controller do
 
