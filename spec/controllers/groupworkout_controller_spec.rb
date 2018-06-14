@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'rspec'
+
 
 RSpec.describe GroupworkoutController, type: :controller do
 

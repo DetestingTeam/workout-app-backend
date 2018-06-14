@@ -29,7 +29,15 @@ RSpec.describe WorkoutdetailsController, type: :controller do
   # Workoutdetail. As you add validations to Workoutdetail, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+
+            rec_set: 2,
+            rec_rep: 10,
+            rec_duration: '5min',
+            workout_id: 1,
+            movement_id: 1
+
+    }
   }
 
   let(:invalid_attributes) {
@@ -43,25 +51,25 @@ RSpec.describe WorkoutdetailsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
+      Fabricate(:movement)
+      Fabricate(:workout)
       workoutdetail = Workoutdetail.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      workoutdetail = Workoutdetail.create! valid_attributes
-      get :show, params: {id: workoutdetail.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
+
+#needs params
 
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Workoutdetail" do
+          Fabricate(:movement)
+          Fabricate(:workout)
+          workoutdetail = Workoutdetail.create! valid_attributes
         expect {
-          post :create, params: {workoutdetail: valid_attributes}, session: valid_session
+          post :create, params: {}, session: valid_session
         }.to change(Workoutdetail, :count).by(1)
       end
 
