@@ -15,7 +15,7 @@ class WorkoutdetailsController < ApplicationController
   def create
     #@workoutdetail = Workoutdetail.new(workoutdetail_params)
 
-  workoutdetails = workoutdetail.create(workoutdetails_params)
+  workoutdetails = Workoutdetail.create(workoutdetails_params)
   if workoutdetails.valid?
     render json: workoutdetails
    else
