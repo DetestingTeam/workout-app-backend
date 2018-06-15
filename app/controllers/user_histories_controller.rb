@@ -22,6 +22,7 @@ end
   end
 end
 
+private
  def userhistory_params
      params.require(:userhistory).permit(:user_id, :workout_id, :movement_name, :weight, :set, :movement_id, :movement, :rep)
  end

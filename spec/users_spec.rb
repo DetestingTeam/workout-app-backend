@@ -14,9 +14,8 @@ RSpec.describe "Users", type: :request do
         }
       }
 
-      post user_registration_path, params: payload
+      post '/users', params: payload
       expect(response).to have_http_status(201)
-      expect(response.headers["Authorization"]).to_not be_blank
     end
 
     it "should return errors when fails to create" do
@@ -28,7 +27,7 @@ RSpec.describe "Users", type: :request do
         }
       }
 
-      post user_registration_path, params: payload
+      post '/users', params: payload
       expect(response).to have_http_status(422)
       expect(response.headers["Authorization"]).to be_blank
     end
